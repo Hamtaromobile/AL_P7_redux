@@ -65,23 +65,30 @@ exports.getOnePost = (req, res, next) => {
 //recup. tous les posts, route get
 exports.getAllPost = (req, res, next) => {
 	let selector = req.query;
-	console.log("selector", selector);
-	console.log("req.query", req.query);
-	if ((selector = -1) || (selector = undefined)) {
-		Post.find()
-			.sort({ date: -1 })
-			.then((posts) => res.status(200).json(posts))
-			.catch((error) => res.status(400).json({ error }));
-	} else if ((selector = 0)) {
-		Post.find()
-			.sort({ userFirstName: -1 })
-			.then((posts) => res.status(200).json(posts))
-			.catch((error) => res.status(400).json({ error }));
-	} else if ((selector = 1)) {
-		Post.find()
-			.sort({ views: -1 })
-			.then((posts) => res.status(200).json(posts))
-			.catch((error) => res.status(400).json({ error }));
+	switch (selector.value) {
+		case "-1":
+			Post.find()
+				.sort({ date: -1 })
+				.then((posts) => res.status(200).json(posts))
+				.catch((error) => res.status(400).json({ error }));
+			break;
+		case "0":
+			Post.find()
+				.sort({ userFirstName: -1 })
+				.then((posts) => res.status(200).json(posts))
+				.catch((error) => res.status(400).json({ error }));
+			break;
+		case "1":
+			Post.find()
+				.sort({ views: -1 })
+				.then((posts) => res.status(200).json(posts))
+				.catch((error) => res.status(400).json({ error }));
+			break;
+		default:
+			Post.find()
+				.sort({ date: -1 })
+				.then((posts) => res.status(200).json(posts))
+				.catch((error) => res.status(400).json({ error }));
 	}
 };
 
@@ -101,7 +108,6 @@ exports.pushIdReply = (req, res, next) => {
 
 //remove idReply
 exports.pullIdReply = (req, res, next) => {
-	console.log("req.body.idReply", req.body.idReply);
 	if (req.body.idReply) {
 		Post.updateOne(
 			{ _id: req.params.id },

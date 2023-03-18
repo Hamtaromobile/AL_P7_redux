@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Selector = (setSorting) => {
-	const [selected, setSelected] = useState("date");
+const Selector = ({ setSorting }) => {
+	const [selected, setSelected] = useState({ setSorting });
 	const urlGetAllPost = "http://localhost:3001/api/post/getAllPost/";
 	const token = JSON.parse(localStorage.getItem("token"));
 
 	const handleSelectDate = (option) => {
 		setSelected(option);
-		setSorting(option);
+		//	setSorting(option);
 		axios
 			.get(urlGetAllPost, {
 				params: {
@@ -30,7 +30,7 @@ const Selector = (setSorting) => {
 
 	const handleSelectAuteur = (option) => {
 		setSelected(option);
-		setSorting(option);
+		//setSorting(option);
 		axios
 			.get(urlGetAllPost, {
 				params: {
@@ -52,7 +52,7 @@ const Selector = (setSorting) => {
 
 	const handleSelectNbrVu = (option) => {
 		setSelected(option);
-		setSorting(option);
+		//setSorting(option);
 		axios
 			.get(urlGetAllPost, {
 				params: {
