@@ -1,0 +1,147 @@
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+
+
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+
+ .margin10{margin-bottom:10px; margin-right:10px;}
+
+  .txt_area_title{
+    width: 100%;
+    resize: none;
+    height: 60px;
+    outline: none;
+  }
+
+  .container_button_mp{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    width: 40em;
+  }
+
+  .item_btn{
+    margin-top: 0.4em;
+    margin-left: 1em;
+  }
+
+  .container_btn_like_dis{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+  }
+
+  .container_like_dis{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:9em;
+    margin-top: 0.5em;
+  }
+
+  .item_like:hover{
+    font-size:3em;
+    filter: brightness(0.5);
+    cursor: pointer
+  }
+
+  .item_nbr_like{
+    color:grey;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0.65em;
+  }
+
+  .item_dislike:hover{
+    font-size:3em;
+    filter: brightness(0.5);
+    cursor: pointer;
+  }
+
+  .item_nbr_dislike{
+    color:grey;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0.65em;
+  }
+
+  .item_txt_area_reply{
+    width: 100%;
+    resize: none;
+    height: 15em;
+    outline: none;
+    margin-top: 5em;
+  }
+
+  .container_btn_reply{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 30em;
+  }
+
+  .err_send{
+    color: red;
+  }
+
+  .item_tt_reply{
+    margin-top: 1em;
+    margin-bottom: -1em;
+  }
+
+.container_edit_mainpost{
+  margin-top: -0.7em;
+  padding-bottom: 1em;
+}
+
+@media screen and (max-width:767px) {
+  .txt_area_mainpost {
+    width: 25em;
+    resize: none;
+    height: 19em;
+    outline: none;
+  }
+  
+  .txt_mainpost{
+    width: 27em;
+  }
+}

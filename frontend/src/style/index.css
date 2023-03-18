@@ -1,0 +1,19 @@
+
+@import "./pages/profile";
+@import "./pages/home";
+@import "./pages/innerpost";
+@import "./pages/creatpost";
+@import "./pages/signup";
+@import "./components/footer";
+@import "./components/profileimg";
+@import "./components/post";
+@import "./components/mainpost";
+@import "./components/reply";
+@import "./components/login";
+@import "./components/pagination";
+@import "./components/nav";
+@import "./components/selector";
+
+body {
+    font-family: 'Poppins', sans-serif;
+  }

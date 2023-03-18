@@ -1,0 +1,42 @@
+.container_prof{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:flex-start;
+    margin-top: 2em;
+}
+.container_profileinfo{
+    margin-left: 3em;
+    flex-grow: 1;
+}
+
+.container_profileimg{
+    margin-left: 3em;
+}
+
+.tt_profile{
+    text-align: center;
+    margin-top: 1em;
+}
+
+  .container_nav_back_profile{
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+
+  .nav_back_profile{
+    color:grey;
+  }
+
+  .icone_arrowback_profile:hover{
+    cursor: pointer;
+    color:red;
+  }
+
+  @media (max-width: 1250px) { 
+
+    .container_prof{
+      margin-left: -3em;
+  }
+  }

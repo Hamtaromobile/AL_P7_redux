@@ -1,0 +1,92 @@
+.reply{
+  list-style: none;
+}
+
+  .container_reply{
+    background-color: rgb(246, 246, 246);
+    padding-top: 1em;
+  }
+  
+ .txt_area_reply {
+    width: 70em;
+    resize: none;
+    height: 19em;
+    outline: none;
+  }
+
+  .container_button_mp_reply{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    width: 40em;
+  }
+
+  .item_btn_reply{
+    margin-top: 0.4em;
+    margin-left: 1em;
+  }
+
+  .container_btn_like_dis_reply{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+  }
+
+  .container_like_dis_reply{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:9em;
+    margin-top: 0.5em;
+  }
+
+  .item_like_reply:hover{
+    font-size:3em;
+    filter: brightness(0.5);
+    cursor: pointer
+  }
+
+  .item_nbr_like_reply{
+    color:grey;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0.65em;
+  }
+
+  .item_dislike_reply:hover{
+    font-size:3em;
+    filter: brightness(0.5);
+    cursor: pointer;
+  }
+
+  .item_nbr_dislike_reply{
+    color:grey;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 0.65em;
+  }
+
+  .err_send_reply{
+    color: red;
+  }
+
+  .item_tt_reply{
+    margin-top: 1em;
+    margin-bottom: -1em;
+  }
+
+
+  @media screen and (max-width:767px) {
+    .txt_area_reply {
+      width: 25em;
+      resize: none;
+      height: 19em;
+      outline: none;
+    }
+
+    .txt_reply{
+      width: 27em;
+    }
+  }

@@ -1,0 +1,25 @@
+.selector {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #ccc;
+
+  overflow: hidden;
+}
+
+.option {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.option:hover {
+  background-color: #eee;
+}
+
+.selected {
+  background-color: #FFD7D7;
+  color: black;
+}
