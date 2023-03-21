@@ -10,6 +10,8 @@ import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/Footer";
+import { useDispatch } from "react-redux";
+import { addPoste } from "../feature/postes.slice";
 
 const theme = createTheme({
 	palette: {
@@ -45,6 +47,7 @@ const Creatpost = () => {
 	const idUser = params.get("id");
 	const token = JSON.parse(localStorage.getItem("token"));
 	const [statusErrAxiosUser, setStatusErrAxiosUser] = useState([]);
+	const dispatch = useDispatch();
 
 	//logout if "get type" axios "unauthorized"
 	useEffect(() => {
@@ -120,6 +123,7 @@ const Creatpost = () => {
 			.then((res) => {
 				setDataResAxios(res.data);
 				setDataResStatAxios(res.status);
+				dispatch(addPoste(formData));
 			})
 			.catch((err) => {
 				console.log(err);

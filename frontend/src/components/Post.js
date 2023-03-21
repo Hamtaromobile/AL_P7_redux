@@ -7,7 +7,7 @@ const Post = ({ dataPost, idUser }) => {
 	return (
 		<section>
 			<ul>
-				{dataPost.map((dataPost) => (
+				{dataPost?.map((dataPost) => (
 					<NavLink
 						className="nav_back_profile"
 						to={`/Innerpost?idU=${idUser}&idP=${dataPost._id}`}

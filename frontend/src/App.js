@@ -9,19 +9,19 @@ import Createpost from "./pages/Createpost";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Innerpost" element={<Innerpost />} />
-        <Route path="/Createpost" element={<Createpost />} />
-        <Route path="*" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/Signup" element={<Signup />} />
+				<Route path="/Home" element={<Home />} />
+				<Route path="/Profile" element={<Profile />} />
+				<Route path="/Innerpost" element={<Innerpost />} />
+				<Route path="/Createpost" element={<Createpost />} />
+				<Route path="*" element={<Login />} />
+			</Routes>
+		</BrowserRouter>
+	);
 };
 
 export default App;

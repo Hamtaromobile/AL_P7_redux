@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Pagination from "../components/Pagination";
 import Selector from "../components/Selector";
+import { useDispatch, useSelector } from "react-redux";
+import { setPostesData } from "../feature/postes.slice";
 
 const theme = createTheme({
 	palette: {
@@ -42,6 +44,8 @@ const Home = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage, setPostsPerPage] = useState(3);
 	const [sorting, setSorting] = useState("date");
+	const dispatch = useDispatch(); //déclancher actions redux
+	const postesData = useSelector((state) => state.postes.postes); // fait appel au donné du store
 
 	//logout if "get type" axios "unauthorized"
 	useEffect(() => {
@@ -80,7 +84,8 @@ const Home = () => {
 				},
 			})
 			.then((res) => {
-				setDataPost(res.data);
+				//setDataPost(res.data);
+				dispatch(setPostesData(res.data));
 			})
 			.catch((err) => {
 				setStatusErrAxiosPost(err.response.status);
@@ -89,10 +94,10 @@ const Home = () => {
 	}, [sorting]);
 
 	// Déterminer le nombre total de pages ; retourn un entier au nbr supp
-	const totalPages = Math.ceil(dataPost.length / postsPerPage);
+	const totalPages = Math.ceil(postesData?.length / postsPerPage);
 
 	// Déterminer les données à afficher pour la page actuelle ; retourne tab en spécifiant les index de départ et de fin
-	const currentData = dataPost.slice(
+	const currentData = postesData?.slice(
 		(currentPage - 1) * postsPerPage,
 		currentPage * postsPerPage
 	);
@@ -156,7 +161,7 @@ const Home = () => {
 							<div className="post_home">
 								<Post dataPost={currentData} idUser={idUser} />
 							</div>
-							{dataPost.length > postsPerPage ? (
+							{postesData?.length > postsPerPage ? (
 								<Pagination
 									currentPage={currentPage}
 									handleClick={handleClick}
